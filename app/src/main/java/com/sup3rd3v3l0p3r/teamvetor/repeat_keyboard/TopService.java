@@ -51,52 +51,59 @@ public class TopService extends InputMethodService {
                         onoffCheck = !onoffCheck;
                         Thread thread = new Thread() {
                             InputConnection ic = getCurrentInputConnection();
-                            SharedPreferences save = getSharedPreferences("save",MODE_PRIVATE);
+                            SharedPreferences save = getSharedPreferences("save", MODE_PRIVATE);
 
                             @Override
                             public void run() {
                                 String text;
                                 while (true) {
-                                        switch ((int) (Math.random() * 10) % 3) {
-                                            case 0:
-                                                text = save.getString("et1","");
-                                                if(text.equals(""));
-                                                else
-                                                    ic.commitText(text, 1);
+                                    switch ((int) (Math.random() * 10) % 3) {
+                                        case 0:
+                                            text = save.getString("et1", "").toString();
+                                            if (text.equals("")) ;
+                                            else
+                                                ic.commitText(save.getString("et1", ""), 1);
                                             break;
                                         case 1:
-                                            text = save.getString("et1","");
-                                            if(text.equals(""));
-                                            else
-                                                ic.commitText(text, 1);
+                                            text = save.getString("et2", "").toString();
+                                            if (text.equals("")) ;
+                                            else {
+                                                ic.commitText(save.getString("et2", ""), 1);
+                                                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                                            }
                                             break;
                                         case 2:
-                                            text = save.getString("et1","");
-                                            if(text.equals(""));
-                                            else
+                                            text = save.getString("et3", "").toString();
+                                            if (text.equals("")) ;
+                                            else {
                                                 ic.commitText(text, 1);
+                                                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                                            }
                                             break;
                                         case 3:
-                                            text = save.getString("et1","");
-                                            if(text.equals(""));
-                                            else
+                                            text = save.getString("et4", "").toString();
+                                            if (text.equals("")) ;
+                                            else {
                                                 ic.commitText(text, 1);
+                                                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                                            }
                                             break;
                                         case 4:
-                                            text = save.getString("et1","");
-                                            if(text.equals(""));
-                                            else
+                                            text = save.getString("et5", "").toString();
+                                            if (text.equals("")) ;
+                                            else {
                                                 ic.commitText(text, 1);
+                                                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                                            }
                                             break;
                                     }
-                                    ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
 
                                     if (onoffCheck == false) {
                                         keyDownUp(66);
                                         break;
                                     }
                                     try {
-                                        sleep(100);
+                                        sleep(50);
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
                                     }
