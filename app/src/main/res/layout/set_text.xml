@@ -108,7 +108,7 @@
             android:layout_weight="1"
             android:background="#545454"
             android:gravity="center"
-            android:onClick="TextSet"
+            android:onClick="SetInputText"
             android:text="SET TEXT"
             android:textSize="30sp" />
     </LinearLayout>

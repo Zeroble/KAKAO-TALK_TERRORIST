@@ -29,7 +29,7 @@ public class SetTextActivity extends Activity {
         editText5.setText(save.getString("et5", ""));
     }
 
-    public void TextSet(View v) {
+    public void SetInputText(View v) {
         EditText editText1 = (EditText) findViewById(R.id.et1);
         EditText editText2 = (EditText) findViewById(R.id.et2);
         EditText editText3 = (EditText) findViewById(R.id.et3);
