@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".TopService"
             android:permission="android.permission.BIND_INPUT_METHOD">
@@ -29,7 +30,8 @@
                 android:name="android.view.im"
                 android:resource="@xml/method" />
         </service>
-        <activity android:name=".SetTextActivity"/>
+
+        <activity android:name=".SetTextActivity" />
     </application>
 
 </manifest>

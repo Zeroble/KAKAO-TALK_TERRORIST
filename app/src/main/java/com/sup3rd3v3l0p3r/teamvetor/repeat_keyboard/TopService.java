@@ -62,31 +62,31 @@ public class TopService extends InputMethodService {
                                                 text = save.getString("et1","");
                                                 if(text.equals(""));
                                                 else
-                                                    ic.commitText(save.getString("et1",""), 1);
+                                                    ic.commitText(text, 1);
                                             break;
                                         case 1:
                                             text = save.getString("et1","");
                                             if(text.equals(""));
                                             else
-                                                ic.commitText(save.getString("et2",""), 1);
+                                                ic.commitText(text, 1);
                                             break;
                                         case 2:
                                             text = save.getString("et1","");
                                             if(text.equals(""));
                                             else
-                                                ic.commitText(save.getString("et3",""), 1);
+                                                ic.commitText(text, 1);
                                             break;
                                         case 3:
                                             text = save.getString("et1","");
                                             if(text.equals(""));
                                             else
-                                                ic.commitText(save.getString("et4",""), 1);
+                                                ic.commitText(text, 1);
                                             break;
                                         case 4:
                                             text = save.getString("et1","");
                                             if(text.equals(""));
                                             else
-                                                ic.commitText(save.getString("et5",""), 1);
+                                                ic.commitText(text, 1);
                                             break;
                                     }
                                     ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
