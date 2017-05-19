@@ -29,6 +29,11 @@
             android:onClick="mStop"
             android:text="종료하기" />
     </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="텍스트 설정 하기"
+        android:onClick="setText"/>
 
     <TextView
         android:layout_width="match_parent"

@@ -25,5 +25,8 @@ public class MainActivity extends Activity {
         EditText editText = (EditText) findViewById(R.id.et);
         editText.setText("");
     }
+    public void setText(View v){
+        startActivity(new Intent(this,SetTextActivity.class));
+    }
 
 }

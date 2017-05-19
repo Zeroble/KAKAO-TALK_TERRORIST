@@ -1,6 +1,7 @@
 package com.sup3rd3v3l0p3r.teamvetor.repeat_keyboard;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
 import android.inputmethodservice.InputMethodService;
 import android.view.Gravity;
@@ -50,19 +51,42 @@ public class TopService extends InputMethodService {
                         onoffCheck = !onoffCheck;
                         Thread thread = new Thread() {
                             InputConnection ic = getCurrentInputConnection();
+                            SharedPreferences save = getSharedPreferences("save",MODE_PRIVATE);
 
                             @Override
                             public void run() {
+                                String text;
                                 while (true) {
-                                    switch ((int) (Math.random() * 10) % 3) {
-                                        case 0:
-                                            ic.commitText("0ㅅ0", 1);
+                                        switch ((int) (Math.random() * 10) % 3) {
+                                            case 0:
+                                                text = save.getString("et1","");
+                                                if(text.equals(""));
+                                                else
+                                                    ic.commitText(save.getString("et1",""), 1);
                                             break;
                                         case 1:
-                                            ic.commitText("ㅇㅅㅇ", 1);
+                                            text = save.getString("et1","");
+                                            if(text.equals(""));
+                                            else
+                                                ic.commitText(save.getString("et2",""), 1);
                                             break;
                                         case 2:
-                                            ic.commitText("0ㅛ0", 1);
+                                            text = save.getString("et1","");
+                                            if(text.equals(""));
+                                            else
+                                                ic.commitText(save.getString("et3",""), 1);
+                                            break;
+                                        case 3:
+                                            text = save.getString("et1","");
+                                            if(text.equals(""));
+                                            else
+                                                ic.commitText(save.getString("et4",""), 1);
+                                            break;
+                                        case 4:
+                                            text = save.getString("et1","");
+                                            if(text.equals(""));
+                                            else
+                                                ic.commitText(save.getString("et5",""), 1);
                                             break;
                                     }
                                     ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
@@ -115,7 +139,7 @@ public class TopService extends InputMethodService {
     public void onCreate() {
         super.onCreate();
         LayoutInflater mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mView = mInflater.inflate(R.layout.input, null);
+        mView = mInflater.inflate(R.layout.alaways_top, null);
         mView.setOnTouchListener(mViewTouchListener);
         mParams = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
