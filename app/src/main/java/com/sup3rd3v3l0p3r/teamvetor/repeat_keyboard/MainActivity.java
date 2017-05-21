@@ -19,24 +19,23 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SetPermission();
     }
 
-    public void mStart(View v)
+    public void SetPermission()
     {
         PermissionListener permissionlistener = new PermissionListener() {
             @Override
             public void onPermissionGranted() {
-                Toast.makeText(getApplicationContext(), "권한 허가", Toast.LENGTH_SHORT).show();
-                startService(new Intent(getApplicationContext(),TopService.class));
+                Toast.makeText(getApplicationContext(), "화면 오버레이 권한 허가됨", Toast.LENGTH_SHORT).show();
+//                startService(new Intent(getApplicationContext(),TopService.class));
             }
 
             @Override
             public void onPermissionDenied(ArrayList<String> deniedPermissions) {
-                Toast.makeText(getApplicationContext(), "권한 거부\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "화면 오버레이 권한 거부됨...\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
             }
         };
-
-
         new TedPermission(this)
                 .setPermissionListener(permissionlistener)
                 .setRationaleMessage("하라면 해!")
@@ -45,12 +44,12 @@ public class MainActivity extends Activity {
                 .check();
     }
 
-    public void mStop(View v) {
-        stopService(new Intent(this,TopService.class));
-    }
     public void Clear(View v){
         EditText editText = (EditText) findViewById(R.id.et);
         editText.setText("");
+    }
+    public void showInfo(View v){
+        startActivity(new Intent(this,ShowinfoActivity.class));
     }
     public void setText(View v){
         startActivity(new Intent(this,SetTextActivity.class));

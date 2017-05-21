@@ -10,25 +10,12 @@
     android:paddingTop="16dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:text="사용법 보기"
+        android:onClick="showInfo"/>
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="mStart"
-            android:layout_weight="1"
-            android:text="시작하기" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="mStop"
-            android:text="종료하기" />
-    </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -57,7 +57,7 @@ public class TopService extends InputMethodService {
                             public void run() {
                                 String text;
                                 while (true) {
-                                    switch ((int) (Math.random() * 10) % 3) {
+                                    switch ((int) (Math.random() * 10) % 5) {
                                         case 0:
                                             text = save.getString("et1", "").toString();
                                             if (text.equals("")) ;
@@ -115,7 +115,6 @@ public class TopService extends InputMethodService {
                             thread.start();
                         } else
                             Toast.makeText(getApplicationContext(), "종료됨", Toast.LENGTH_SHORT).show();
-
                     }
                     break;
 
